@@ -5,32 +5,40 @@ Version:	1.3
 Release:	0.1
 License:	GPL/LGPL
 Group:		Libraries
-Source0:	http://mesh.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
 # Source0-md5:	dea7bd4c2d9d9f5429082448af2aab22
-Patch0:	%{name}-infopage.patch
+Patch0:		%{name}-infopage.patch
 URL:		http://libbinio.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The binary I/O stream class library presents a platform-independent
-way to access binary data streams in C++.
-The library is hardware independent in the form that it transparently
-converts between the different forms of machine-internal binary data
-representation.
-It further employs no special I/O protocol and can be used on
-arbitrary binary data sources.
+way to access binary data streams in C++. The library is hardware
+independent in the form that it transparently converts between the
+different forms of machine-internal binary data representation. It
+further employs no special I/O protocol and can be used on arbitrary
+binary data sources.
 
-#%%description -l pl
+%description -l pl
+Biblioteka klas strumieniowych binarnych operacji wej¶cia/wyj¶cia
+prezentuje niezale¿ny od platformy sposób dostêpu do binarnych
+strumieni danych w C++. Biblioteka jest niezale¿na od sprzêtu dziêki
+temu, ¿e w przezroczysty sposób wykonuje konwersjê pomiêdzy ró¿nymi
+postaciami reprezentacji danych binarnych w wewnêtrznym formacie
+maszyny. Co wiêcej, nie wykorzystuje ¿adnego specjalnego protoko³u
+wej¶cia/wyj¶cia i mo¿e byæ u¿ywana na dowolnych ¼ród³ach danych
+binarnych.
 
 %package devel
 Summary:	Header files for libbinio library
 Summary(pl):	Pliki nag³ówkowe biblioteki libbinio
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel
 
 %description devel
 Header files for libbinio library.
@@ -90,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
-%{_infodir}/*
+%{_infodir}/*.info*
 
 %files static
 %defattr(644,root,root,755)
