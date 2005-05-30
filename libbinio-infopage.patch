@@ -1,9 +1,12 @@
 diff -Nur libbinio-1.3.orig/doc/libbinio.info libbinio-1.3.new/doc/libbinio.info
 --- libbinio-1.3.orig/doc/libbinio.info	2004-08-19 14:07:15.000000000 +0200
-+++ libbinio-1.3.new/doc/libbinio.info	2005-02-14 08:38:20.212451344 +0100
-@@ -20,7 +20,7 @@
++++ libbinio-1.3.new/doc/libbinio.info	2005-05-30 19:05:19.000000000 +0200
+@@ -18,9 +18,9 @@
+      modify this GNU Manual, like GNU software.  Copies published by
+      the Free Software Foundation raise funds for GNU development."
     
- INFO-DIR-SECTION Software Libraries
+-INFO-DIR-SECTION Software Libraries
++INFO-DIR-SECTION Libraries
  START-INFO-DIR-ENTRY
 -* libbinio: (libbinio)          Binary I/O stream class library 1.3
 +* libbinio: (libbinio)			Binary I/O stream class library 1.3
@@ -12,7 +15,7 @@ diff -Nur libbinio-1.3.orig/doc/libbinio.info libbinio-1.3.new/doc/libbinio.info
  
 diff -Nur libbinio-1.3.orig/doc/libbinio.info-1 libbinio-1.3.new/doc/libbinio.info-1
 --- libbinio-1.3.orig/doc/libbinio.info-1	2004-08-19 14:07:15.000000000 +0200
-+++ libbinio-1.3.new/doc/libbinio.info-1	2005-02-14 08:38:30.207931800 +0100
++++ libbinio-1.3.new/doc/libbinio.info-1	2005-02-14 08:38:30.000000000 +0100
 @@ -20,7 +20,7 @@
     
  INFO-DIR-SECTION Software Libraries
@@ -24,7 +27,7 @@ diff -Nur libbinio-1.3.orig/doc/libbinio.info-1 libbinio-1.3.new/doc/libbinio.in
  
 diff -Nur libbinio-1.3.orig/doc/libbinio.info-2 libbinio-1.3.new/doc/libbinio.info-2
 --- libbinio-1.3.orig/doc/libbinio.info-2	2004-08-19 14:07:15.000000000 +0200
-+++ libbinio-1.3.new/doc/libbinio.info-2	2005-02-14 08:38:41.516212680 +0100
++++ libbinio-1.3.new/doc/libbinio.info-2	2005-02-14 08:38:41.000000000 +0100
 @@ -20,7 +20,7 @@
     
  INFO-DIR-SECTION Software Libraries
@@ -36,10 +39,13 @@ diff -Nur libbinio-1.3.orig/doc/libbinio.info-2 libbinio-1.3.new/doc/libbinio.in
  
 diff -Nur libbinio-1.3.orig/doc/libbinio.texi libbinio-1.3.new/doc/libbinio.texi
 --- libbinio-1.3.orig/doc/libbinio.texi	2004-08-18 21:49:11.000000000 +0200
-+++ libbinio-1.3.new/doc/libbinio.texi	2005-02-14 08:39:00.503326200 +0100
-@@ -27,7 +27,7 @@
++++ libbinio-1.3.new/doc/libbinio.texi	2005-05-30 19:04:58.000000000 +0200
+@@ -25,9 +25,9 @@
+ @end quotation
+ @end copying
  
- @dircategory Software Libraries
+-@dircategory Software Libraries
++@dircategory Libraries
  @direntry
 -* libbinio: (libbinio)          Binary I/O stream class library @value{VERSION}
 +* libbinio: (libbinio)			Binary I/O stream class library @value{VERSION}
