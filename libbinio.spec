@@ -2,7 +2,7 @@ Summary:	Binary I/O stream class library
 Summary(pl):	Biblioteka klas strumieni binarnych
 Name:		libbinio
 Version:	1.3
-Release:	1
+Release:	0.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
