@@ -1,53 +1,72 @@
 Summary:	Binary I/O stream class library
-Summary(pl):	Biblioteka klas strumieni binarnych
+Summary(pl):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
 Version:	1.3
 Release:	0.1
-License:	LGPL
+License:	GPL/LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
 # Source0-md5:	dea7bd4c2d9d9f5429082448af2aab22
+Patch0:		%{name}-infopage.patch
 URL:		http://libbinio.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool >= 2:1.5
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The binary I/O stream class library presents a platform-independent way to
-access binary data streams in C++.
+The binary I/O stream class library presents a platform-independent
+way to access binary data streams in C++. The library is hardware
+independent in the form that it transparently converts between the
+different forms of machine-internal binary data representation. It
+further employs no special I/O protocol and can be used on arbitrary
+binary data sources.
 
 %description -l pl
-Biblioteka klas dla strumieni binarnych jest niezale¿na od platformy drog±
-dostêpu do danych w strumieniach binarnych przy u¿yciu C++.
+Biblioteka klas strumieniowych binarnych operacji wej¶cia/wyj¶cia
+prezentuje niezale¿ny od platformy sposób dostêpu do binarnych
+strumieni danych w C++. Biblioteka jest niezale¿na od sprzêtu dziêki
+temu, ¿e w przezroczysty sposób wykonuje konwersjê pomiêdzy ró¿nymi
+postaciami reprezentacji danych binarnych w wewnêtrznym formacie
+maszyny. Co wiêcej, nie wykorzystuje ¿adnego specjalnego protoko³u
+wej¶cia/wyj¶cia i mo¿e byæ u¿ywana na dowolnych ¼ród³ach danych
+binarnych.
 
 %package devel
-Summary:	Development libraries and header files for termcap library
-Summary(pl):	Biblioteki deweloperskie i pliki nag³ówkowe dla libbinio
+Summary:	Header files for libbinio library
+Summary(pl):	Pliki nag³ówkowe biblioteki libbinio
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel
 
 %description devel
-This is the package containing the development libaries and header
-files for libbinio.
+Header files for libbinio library.
 
-%description -l pl devel
-Ten pakiet zawiera pliki nag³ówkowe i biblioteki  deweloperskie dla
-libbinio.
+%description devel -l pl
+Pliki nag³ówkowe biblioteki libbinio.
 
 %package static
 Summary:	Static libbinio library
-Summary(pl):	Statyczne biblioteki libbinio
+Summary(pl):	Statyczna biblioteka libbinio
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libbinio library.
 
-%description -l pl static
-Statyczne biblioteki libbinio.
+%description static -l pl
+Statyczna biblioteka libbinio.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
@@ -61,21 +80,26 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
-
 %postun	-p /sbin/ldconfig
+
+%post devel
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%postun devel
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
-%{_libdir}/%{name}.so
-%{_libdir}/%{name}.so.1.0.0
-%{_libdir}/%{name}.la
-%{_infodir}/%{name}*
+%doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/*.h
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
+%{_includedir}/*
+%{_infodir}/*.info*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/lib*.a
