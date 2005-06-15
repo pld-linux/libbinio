@@ -1,3 +1,4 @@
+%bcond_without	static	# don't build static library
 Summary:	Binary I/O stream class library
 Summary(pl):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
@@ -67,7 +68,8 @@ Statyczna biblioteka libbinio.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static:--disable-static}
 %{__make}
 
 %install
@@ -100,6 +102,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 %{_infodir}/*.info*
 
+%if %{with static}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
