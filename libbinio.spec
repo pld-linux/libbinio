@@ -1,4 +1,6 @@
+# Conditional build:
 %bcond_without	static_libs	# don't build static library
+#
 Summary:	Binary I/O stream class library
 Summary(pl):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
