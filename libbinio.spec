@@ -1,15 +1,16 @@
+#
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Binary I/O stream class library
 Summary(pl):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
-Version:	1.3
-Release:	0.1
+Version:	1.4
+Release:	1
 License:	GPL/LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
-# Source0-md5:	dea7bd4c2d9d9f5429082448af2aab22
+# Source0-md5:	517ded8c7ce9b3de0f84b1db74a2ebda
 Patch0:		%{name}-infopage.patch
 URL:		http://libbinio.sourceforge.net/
 BuildRequires:	autoconf
@@ -102,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
+%{_pkgconfigdir}/*.pc
 %{_infodir}/*.info*
 
 %if %{with static_libs}
