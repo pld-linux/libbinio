@@ -7,7 +7,7 @@ Summary(pl):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
 Version:	1.4
 Release:	1
-License:	GPL/LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
 # Source0-md5:	517ded8c7ce9b3de0f84b1db74a2ebda
