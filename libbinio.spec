@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Binary I/O stream class library
-Summary(pl):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
+Summary(pl.UTF-8):   Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
 Version:	1.4
 Release:	1
@@ -28,19 +28,19 @@ different forms of machine-internal binary data representation. It
 further employs no special I/O protocol and can be used on arbitrary
 binary data sources.
 
-%description -l pl
-Biblioteka klas strumieniowych binarnych operacji wej¶cia/wyj¶cia
-prezentuje niezale¿ny od platformy sposób dostêpu do binarnych
-strumieni danych w C++. Biblioteka jest niezale¿na od sprzêtu dziêki
-temu, ¿e w przezroczysty sposób wykonuje konwersjê pomiêdzy ró¿nymi
-postaciami reprezentacji danych binarnych w wewnêtrznym formacie
-maszyny. Co wiêcej, nie wykorzystuje ¿adnego specjalnego protoko³u
-wej¶cia/wyj¶cia i mo¿e byæ u¿ywana na dowolnych ¼ród³ach danych
+%description -l pl.UTF-8
+Biblioteka klas strumieniowych binarnych operacji wejÅ›cia/wyjÅ›cia
+prezentuje niezaleÅ¼ny od platformy sposÃ³b dostÄ™pu do binarnych
+strumieni danych w C++. Biblioteka jest niezaleÅ¼na od sprzÄ™tu dziÄ™ki
+temu, Å¼e w przezroczysty sposÃ³b wykonuje konwersjÄ™ pomiÄ™dzy rÃ³Å¼nymi
+postaciami reprezentacji danych binarnych w wewnÄ™trznym formacie
+maszyny. Co wiÄ™cej, nie wykorzystuje Å¼adnego specjalnego protokoÅ‚u
+wejÅ›cia/wyjÅ›cia i moÅ¼e byÄ‡ uÅ¼ywana na dowolnych ÅºrÃ³dÅ‚ach danych
 binarnych.
 
 %package devel
 Summary:	Header files for libbinio library
-Summary(pl):	Pliki nag³ówkowe biblioteki libbinio
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libbinio
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -48,19 +48,19 @@ Requires:	libstdc++-devel
 %description devel
 Header files for libbinio library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libbinio.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libbinio.
 
 %package static
 Summary:	Static libbinio library
-Summary(pl):	Statyczna biblioteka libbinio
+Summary(pl.UTF-8):   Statyczna biblioteka libbinio
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libbinio library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libbinio.
 
 %prep
