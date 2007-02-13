@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Binary I/O stream class library
-Summary(pl.UTF-8):   Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
+Summary(pl.UTF-8):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
 Version:	1.4
 Release:	1
@@ -40,7 +40,7 @@ binarnych.
 
 %package devel
 Summary:	Header files for libbinio library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libbinio
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libbinio
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -53,7 +53,7 @@ Pliki nagłówkowe biblioteki libbinio.
 
 %package static
 Summary:	Static libbinio library
-Summary(pl.UTF-8):   Statyczna biblioteka libbinio
+Summary(pl.UTF-8):	Statyczna biblioteka libbinio
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
