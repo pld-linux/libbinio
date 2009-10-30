@@ -12,6 +12,7 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
 # Source0-md5:	517ded8c7ce9b3de0f84b1db74a2ebda
 Patch0:		%{name}-infopage.patch
+Patch1:		gcc4.patch
 URL:		http://libbinio.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -66,6 +67,7 @@ Statyczna biblioteka libbinio.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
