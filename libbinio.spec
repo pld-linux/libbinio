@@ -9,7 +9,7 @@ Version:	1.4
 Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
 # Source0-md5:	517ded8c7ce9b3de0f84b1db74a2ebda
 Patch0:		%{name}-infopage.patch
 Patch1:		gcc4.patch
@@ -90,27 +90,28 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%post devel	-p	/sbin/postshell
+%post	devel -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun devel	-p	/sbin/postshell
+%postun	devel -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libbinio.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbinio.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
-%{_infodir}/*.info*
+%attr(755,root,root) %{_libdir}/libbinio.so
+%{_libdir}/libbinio.la
+%{_includedir}/libbinio
+%{_pkgconfigdir}/libbinio.pc
+%{_infodir}/libbinio.info*
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libbinio.a
 %endif
