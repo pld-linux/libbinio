@@ -6,7 +6,7 @@ Summary:	Binary I/O stream class library
 Summary(pl.UTF-8):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
 Version:	1.4
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
