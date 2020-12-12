@@ -13,9 +13,8 @@ Group:		Libraries
 Source0:	https://github.com/adplug/libbinio/releases/download/%{name}-%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	261046e16f74d1cdbf9aa6c78fa264e4
 Patch0:		%{name}-infopage.patch
-Patch1:		gcc4.patch
 URL:		http://adplug.github.io/libbinio/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libstdc++-devel
@@ -68,7 +67,6 @@ Statyczna biblioteka libbinio.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
