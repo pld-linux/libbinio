@@ -5,15 +5,16 @@
 Summary:	Binary I/O stream class library
 Summary(pl.UTF-8):	Biblioteka klas C++ dla strumieniowych binarnych operacji I/O
 Name:		libbinio
-Version:	1.4
-Release:	4
+Version:	1.5
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libbinio/%{name}-%{version}.tar.bz2
-# Source0-md5:	517ded8c7ce9b3de0f84b1db74a2ebda
+#Source0Download: https://github.com/adplug/libbinio/releases
+Source0:	https://github.com/adplug/libbinio/releases/download/%{name}-%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	261046e16f74d1cdbf9aa6c78fa264e4
 Patch0:		%{name}-infopage.patch
 Patch1:		gcc4.patch
-URL:		http://libbinio.sourceforge.net/
+URL:		http://adplug.github.io/libbinio/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool >= 2:1.5
@@ -84,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libbinio.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -105,7 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libbinio.so
-%{_libdir}/libbinio.la
 %{_includedir}/libbinio
 %{_pkgconfigdir}/libbinio.pc
 %{_infodir}/libbinio.info*

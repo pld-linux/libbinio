@@ -1,6 +1,5 @@
-diff -aurN libbinio-1.4.orig/doc/libbinio.texi libbinio-1.4/doc/libbinio.texi
---- libbinio-1.4.orig/doc/libbinio.texi	2004-08-18 21:49:11.000000000 +0200
-+++ libbinio-1.4/doc/libbinio.texi	2006-02-09 22:24:19.032770096 +0100
+--- libbinio-1.5/doc/libbinio.texi.orig	2020-12-12 12:15:07.540843187 +0100
++++ libbinio-1.5/doc/libbinio.texi	2020-12-12 12:19:57.005941686 +0100
 @@ -25,9 +25,9 @@
  @end quotation
  @end copying
@@ -8,7 +7,7 @@ diff -aurN libbinio-1.4.orig/doc/libbinio.texi libbinio-1.4/doc/libbinio.texi
 -@dircategory Software Libraries
 +@dircategory Libraries:
  @direntry
--* libbinio: (libbinio)          Binary I/O stream class library @value{VERSION}
+-* libbinio: (libbinio).          Binary I/O stream class library @value{VERSION}
 +* libbinio: (libbinio).			Binary I/O stream class library @value{VERSION}
  @end direntry
  
